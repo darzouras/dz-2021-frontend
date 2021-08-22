@@ -1,18 +1,13 @@
 <template>
   <div>
-    <h1>
-      HEADER test
-    </h1>
+    <text-heading :display="'title'" :level="1" :text="'DarZouras.com'" />
 
-    <p>
-      test test test
-    </p>
-
-    <div>
-      <p v-for="page in pages" :key="page.id">
-        {{ page }}
-      </p>
-    </div>
+    <!-- eslint-disable vue/no-v-html -->
+    <div
+        v-if="home.Intro"
+        v-html="$md.render(home.Intro)"
+    />
+    <!-- eslint-enable vue/no-v-html -->
   </div>
 </template>
 
@@ -20,26 +15,16 @@
 export default {
   async asyncData({ $strapi }) {
     return {
-      pages: await $strapi.find("pages"),
+      home: await $strapi.find("home")
     };
   },
 }
 </script>
 
 <style lang="scss" scoped>
-div {
-  font-family: 'Inconsolata', sans-serif;
-
-  h1 {
-    font-size: 2rem;
-    font-weight: 700;
-    font-variation-settings: 'wdth' 200;
-  }
-
   p {
     font-size: 1.2rem;
     font-weight: 400;
     font-variation-settings: 'wdth' 100;
   }
-}
 </style>
