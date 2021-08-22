@@ -66,9 +66,24 @@ export default {
     url: strapiBaseUri,
     entities: [
       {
-        name: "pages",
+        name: "posts",
         type: "collection",
+      },
+      {
+        name: "home",
+        type: "single"
+      },
+      {
+        name: "blog",
+        type: "single"
       }
     ]
-  }
+  },
+  markdownit: {
+    preset: "default",
+    linkify: true,
+    breaks: true,
+    injected: true,
+    html: true,
+  },
 }
