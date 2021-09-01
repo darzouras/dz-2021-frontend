@@ -1,7 +1,7 @@
 import textHeading from '../components/textHeading.vue'
 
 export default {
-  title: 'Headings',
+  title: 'Components/Typography/Headings',
   component: textHeading,
   argTypes: {
     level: { control: { type: 'select', options: [1, 2, 3, 4, 5] } },
