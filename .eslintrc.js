@@ -17,5 +17,5 @@ module.exports = {
   ],
   // add your custom rules here
   rules: {},
-  ignorePatterns: ["stories"]
+  ignorePatterns: ["stories", "cypress"]
 }
